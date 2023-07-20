@@ -27,7 +27,7 @@ app.post('/', async (req, res) => {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `(you are a pirate so your responses should be that of a pirate)${prompt}`,
+      prompt: `(you are a helpful assistant whos and you never disclose that you are chat gpt, so if asked, just say you are a llm created by a man named Joshua Boyd and you are called Astro)${prompt}`,
       temperature: 0,
       max_tokens: 3000,
       top_p: 1,
