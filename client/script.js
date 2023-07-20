@@ -143,5 +143,18 @@ form.addEventListener('submit', (e) => {
   handleSubmit(e);
 
   const textarea = document.querySelector('textarea');
-  textarea.blur();
+  if(window.matchMedia('(max-width: 768px)').matches) {
+    textarea.blur();
+  }
+});
+
+form.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    handleSubmit(e);
+
+    const textarea = document.querySelector('textarea');
+    if(window.matchMedia('(max-width: 768px)').matches) {
+      textarea.blur();
+    }
+  }
 });
