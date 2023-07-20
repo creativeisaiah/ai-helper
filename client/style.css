@@ -162,6 +162,15 @@ form img {
 
 /* The following media query targets screens that are less than 600px wide, which covers most handheld devices */
 @media only screen and (max-width: 600px) {
+  #app {
+    height: 100vh; /* This should be set to the height of the viewport */
+  }
+
+  #chat_container {
+    flex: 1; /* This should expand to fill the available space */
+    overflow-y: auto; /* This will show a scrollbar only if necessary */
+  }
+
   .message {
     font-size: 16px; /* Decrease font size for handheld devices */
   }
@@ -169,10 +178,6 @@ form img {
   .profile img {
     width: 40%; /* Decrease image size for handheld devices */
     height: 40%;
-  }
-  
-  form {
-    flex-direction: column; /* Stack the textarea and button vertically */
   }
   
   textarea {
