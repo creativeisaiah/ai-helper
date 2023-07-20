@@ -12,6 +12,7 @@ body {
 }
 
 #banner {
+  position: sticky;
   width: 100%;
   padding: 10px 0;
   background-color: #10a37f; /* Adjust the color as per your requirement */
@@ -22,7 +23,7 @@ body {
 
 #app {
   width: 100vw;
-  height: 100vh;
+  height: 97vh;
   background: #343541;
 
   display: flex;
