@@ -139,9 +139,18 @@ const handleSubmit = async (e) => {
 }
 
 
-form.addEventListener('submit', handleSubmit);
+form.addEventListener('submit', (e) => {
+  handleSubmit(e);
+
+  const textarea = document.querySelector('textarea');
+  textarea.blur();
+});
+
 form.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
     handleSubmit(e);
+
+    const textarea = document.querySelector('textarea');
+    textarea.blur();
   }
-})
+});
