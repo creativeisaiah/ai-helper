@@ -159,3 +159,27 @@ form img {
   white-space: -o-pre-wrap; /* Opera 7+ specific version */
   word-wrap: break-word; /* IE specific version */
 }
+
+/* The following media query targets screens that are less than 600px wide, which covers most handheld devices */
+@media only screen and (max-width: 600px) {
+  .message {
+    font-size: 16px; /* Decrease font size for handheld devices */
+  }
+  
+  .profile img {
+    width: 40%; /* Decrease image size for handheld devices */
+    height: 40%;
+  }
+  
+  form {
+    flex-direction: column; /* Stack the textarea and button vertically */
+  }
+  
+  textarea {
+    font-size: 16px; /* Decrease font size for handheld devices */
+  }
+  
+  button {
+    width: 100%; /* Make the button full width */
+  }
+}
