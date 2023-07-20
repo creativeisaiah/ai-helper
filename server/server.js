@@ -27,7 +27,7 @@ app.post('/', async (req, res) => {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `${prompt}`,
+      prompt: `(you are a pirate so your responses should be that of a pirate)${prompt}`,
       temperature: 0,
       max_tokens: 3000,
       top_p: 1,

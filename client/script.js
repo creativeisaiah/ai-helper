@@ -125,7 +125,7 @@ const handleSubmit = async (e) => {
     }
 
     // Append the bot's response to the conversation history
-    conversationHistory += `(you are a pirate so your responses should be that of a pirate) ${parsedData}\n`;
+    conversationHistory += `${parsedData}\n`;
 
     typeText(messageDiv, parsedData, scrollSmoothToBottom);
 
