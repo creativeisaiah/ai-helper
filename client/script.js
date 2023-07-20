@@ -25,18 +25,23 @@ function loader(element){
   }, 300)
 }
 
-function typeText(element, text) {
+function typeText(element, text, callback) {
   let index = 0;
 
   let interval = setInterval(() => {
     if(index < text.length) {
       element.innerHTML += text.charAt(index);
       index++;
+
+      // Scroll after every character added
+      callback();
+
     } else {
       clearInterval(interval);
     }
   }, 20)
 }
+
 
 function generateUniqueId() {
   const timestamp = Date.now();
@@ -46,11 +51,10 @@ function generateUniqueId() {
   return `id-${timestamp}-${hexadecimalString}`;
 }
 
-function scrollSmoothToBottom (id) {
-  const div = document.getElementById(id);
-  div.scrollIntoView(false);
-  window.scrollBy(0, 150); // Adjust scrolling with a negative value if needed
+function scrollSmoothToBottom () {
+  chatContainer.scrollTop = chatContainer.scrollHeight;
 }
+
 
 function chatStripe (isAi, value, uniqueId) {
   let escapedValue = escapeHTML(value);
@@ -123,7 +127,7 @@ const handleSubmit = async (e) => {
     // Append the bot's response to the conversation history
     conversationHistory += ` ${parsedData}\n`;
 
-    typeText(messageDiv, parsedData);
+    typeText(messageDiv, parsedData, scrollSmoothToBottom);
 
     setTimeout(() => scrollSmoothToBottom(uniqueId), 20 * parsedData.length);
   } else {
