@@ -46,13 +46,14 @@ function generateUniqueId() {
   return `id-${timestamp}-${hexadecimalString}`;
 }
 
-function scrollToBottom() {
-  window.scrollTo(0, document.body.scrollHeight);
+function scrollSmoothToBottom (id) {
+  const div = document.getElementById(id);
+  div.scrollIntoView(false);
+  window.scrollBy(0, 150); // Adjust scrolling with a negative value if needed
 }
 
 function chatStripe (isAi, value, uniqueId) {
   let escapedValue = escapeHTML(value);
-  scrollToBottom();
   return (
     `
     <div class="wrapper ${isAi && 'ai'}">
@@ -123,6 +124,8 @@ const handleSubmit = async (e) => {
     conversationHistory += ` ${parsedData}\n`;
 
     typeText(messageDiv, parsedData);
+
+    setTimeout(() => scrollSmoothToBottom(uniqueId), 20 * parsedData.length);
   } else {
     const err = await response.text()
 
