@@ -171,7 +171,7 @@ form img {
 
 /* The following media query targets screens that are less than 600px wide, which covers most handheld devices */
 @media only screen and (max-width: 600px) {
-  * {
+  #app {
     height: 88vh; /* This should be set to the height of the viewport */
   }
 
