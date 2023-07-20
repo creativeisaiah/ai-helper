@@ -46,8 +46,13 @@ function generateUniqueId() {
   return `id-${timestamp}-${hexadecimalString}`;
 }
 
+function scrollToBottom() {
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
 function chatStripe (isAi, value, uniqueId) {
   let escapedValue = escapeHTML(value);
+  scrollToBottom();
   return (
     `
     <div class="wrapper ${isAi && 'ai'}">
