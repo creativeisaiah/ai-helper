@@ -75,7 +75,7 @@ function chatStripe (isAi, value, uniqueId) {
   )
 }
 
-const welcomeMessage = document.getElementById('welcomeMessage');
+const welcomeMessage = document.getElementById('intro-message');
 
 let conversationHistory = '';
 
