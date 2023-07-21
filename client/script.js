@@ -75,12 +75,18 @@ function chatStripe (isAi, value, uniqueId) {
   )
 }
 
+const welcomeMessage = document.getElementById('welcomeMessage');
+
 let conversationHistory = '';
 
 const handleSubmit = async (e) => {
   e.preventDefault();
 
   const data = new FormData(form);
+
+    // Hide the welcome message
+    welcomeMessage.style.display = 'none';
+
 
   // user's chat stripe
   chatContainer.innerHTML += chatStripe(false, data.get('prompt'));
