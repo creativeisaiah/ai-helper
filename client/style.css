@@ -12,13 +12,23 @@ body {
 }
 
 .intro-message {
-  font-size: 24px; /* adjust as needed */
-  color: #dcdcdc; /* or any color that matches your theme */
-  background-color: #40414F; /* to match your existing chat bubbles */
-  border-radius: 5px; /* to maintain the rounded corner look */
-  padding: 10px; /* for some inner spacing */
-  margin-bottom: 20px; /* add some space below the message */
-  text-align: center; /* centers the text */
+  font-size: 18px; 
+  color: #dcdcdc;
+  background-color: #40414F;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.intro-message strong {
+  font-size: 22px;
+  color: #10a37f;
+}
+
+.intro-message em {
+  font-style: italic;
+  color: #5436DA;
 }
 
 #banner {
